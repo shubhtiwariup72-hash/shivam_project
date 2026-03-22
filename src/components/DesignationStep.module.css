@@ -1,0 +1,97 @@
+.stepCard {
+  width: min(760px, 100%);
+  border: 1px solid rgba(245, 126, 59, 0.35);
+  border-radius: 10px;
+  padding: 68px 48px 34px;
+  margin: 0 auto;
+}
+
+.stepTitle {
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", var(--font-family-primary);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 134%;
+  letter-spacing: 0;
+  color: #505b62;
+}
+
+.stepSubTitle {
+  margin: 20px 0 0;
+  text-align: center;
+  font-family: "Poppins", var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 200%;
+  letter-spacing: 0;
+  color: #3d464d;
+}
+
+.pyramidArea {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.pyramidSvg {
+  width: min(360px, 100%);
+  height: auto;
+}
+
+.pyramidBorder {
+  stroke: var(--color-brand-accent);
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.pyramidText {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--color-brand-accent);
+}
+
+.addRow {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.addInput {
+  width: 210px;
+  height: 26px;
+  border: 1px solid rgba(245, 126, 59, 0.45);
+  border-radius: 3px;
+  padding: 0 8px;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  color: #39444b;
+}
+
+.addInput::placeholder {
+  color: #b8b8b8;
+}
+
+.addButton {
+  height: 22px;
+  border: 1px solid rgba(245, 126, 59, 0.45);
+  border-radius: 2px;
+  background: #fff7f2;
+  color: var(--color-brand-accent);
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.addButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

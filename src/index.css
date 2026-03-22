@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family-primary:
+    "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --color-brand-accent: #f57e3b;
+  --color-surface: #ffffff;
+  --hero-lead-weight: 500;
+  --hero-lead-size: 28px;
+  --hero-lead-line-height: 58px;
+  --hero-lead-letter-spacing: 0.01em;
+  --hero-highlight-weight: 700;
+  --hero-highlight-size: 40px;
+  --hero-highlight-line-height: 58px;
+  --hero-highlight-letter-spacing: 0.01em;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: #111827;
+  background: transparent;
+}

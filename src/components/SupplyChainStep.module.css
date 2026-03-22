@@ -1,0 +1,138 @@
+.stepCard {
+  width: min(760px, 100%);
+  border: 1px solid rgba(245, 126, 59, 0.35);
+  border-radius: 10px;
+  padding: 72px 48px 52px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.stepTitle {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  color: #505b62;
+}
+
+.fieldBlock {
+  margin: 56px auto 0;
+  width: min(410px, 100%);
+}
+
+.fieldLabel {
+  display: block;
+  margin: 0 0 10px;
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-align: center;
+  color: #373f45;
+}
+
+.fieldSelect {
+  width: 100%;
+  height: 44px;
+  border: 1px solid rgba(245, 126, 59, 0.45);
+  border-radius: 5px;
+  padding: 10px 14px;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  color: #444444;
+  outline: none;
+  background: #ffffff;
+}
+
+.chainRow {
+  margin: 44px auto 0;
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+  align-items: center;
+  gap: 12px;
+}
+
+.endNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  justify-self: center;
+}
+
+.endIconImage {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.endLabel {
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  font-weight: 600;
+  color: #39444b;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.chainMiddle {
+  --cp-icon-size: 18px;
+  --cp-gap: 8px;
+  --cp-box-height: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: calc(var(--cp-icon-size) + var(--cp-gap) + var(--cp-box-height));
+}
+
+.chainMiddle::before {
+  content: "";
+  position: absolute;
+  top: calc(50% + (var(--cp-icon-size) / 2));
+  left: 0;
+  right: 0;
+  border-top: 1px dashed rgba(245, 126, 59, 0.65);
+}
+
+.cpWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cp-gap);
+  z-index: 1;
+}
+
+.cpNodeIcon {
+  width: var(--cp-icon-size);
+  height: var(--cp-icon-size);
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.cpBox {
+  min-width: 68px;
+  height: 28px;
+  border: 1px solid rgba(245, 126, 59, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  color: #455057;
+  background: #fffdfb;
+}
+
+.emptyGuide {
+  width: 100%;
+  height: 14px;
+}
