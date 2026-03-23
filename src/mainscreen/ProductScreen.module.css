@@ -1,0 +1,541 @@
+/* ── Shell ── */
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f6fa;
+  overflow: hidden;
+}
+
+/* ── Top Bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topBarLogo {
+  height: 32px;
+  object-fit: contain;
+}
+
+.hamburgerBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.hamburgerIcon {
+  font-size: 20px;
+  color: #333;
+}
+
+.companyName {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBarIconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #e8652e;
+}
+
+.topBarIconBtn:hover {
+  background: #fff5f0;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8652e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Body ── */
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 200px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.sidebarItem:hover {
+  background: #fff5f0;
+  color: #e8652e;
+}
+
+.sidebarItemActive {
+  color: #e8652e;
+  font-weight: 600;
+  border-left-color: #e8652e;
+  background: #fff5f0;
+}
+
+.sidebarIcon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebarLabel {
+  white-space: nowrap;
+}
+
+/* ── Main Content ── */
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* ── Brand Header ── */
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.backBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.backBtn:hover {
+  background: #f0f0f0;
+}
+
+.brandLogoWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e8652e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandLogoImg {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.brandTitle {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.brandHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.addProductBtn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #e8652e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addProductBtn:hover {
+  background: #d4551f;
+}
+
+.filterToggleBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #e8652e;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterToggleBtn:hover {
+  background: #d4551f;
+}
+
+/* ── Filter Bar ── */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  flex-wrap: wrap;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 14px;
+  min-width: 140px;
+}
+
+.searchIcon {
+  font-size: 14px;
+  color: #999;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #333;
+  background: transparent;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #ccc;
+}
+
+.filterSelect {
+  padding: 8px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  min-width: 110px;
+}
+
+.resetBtn {
+  padding: 8px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.resetBtn:hover {
+  background: #f5f5f5;
+}
+
+/* ── Product Grid ── */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 8px 32px 32px;
+}
+
+.productCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s;
+}
+
+.productCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.productCardTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.productLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8652e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.productLogoImg {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.productName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.productMrp {
+  font-size: 12px;
+  color: #777;
+}
+
+.productCardBottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.productEditBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productEditBtn:hover {
+  background: #fff5f0;
+}
+
+.productStatus {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* ── Add Product Form ── */
+.addProductCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 40px;
+  max-width: 700px;
+  margin: 24px 32px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.addProductHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.addProductTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 4px;
+}
+
+.addProductBackLink {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.addProductBackLink:hover {
+  color: #e8652e;
+}
+
+.productImageSection {
+  margin-bottom: 32px;
+}
+
+.productImageHint {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
+.productImagePreview {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #f5f6fa;
+  border: 1px dashed #ccc;
+}
+
+.productImageImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.productImagePlaceholder {
+  font-size: 32px;
+  color: #ccc;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.formRequired {
+  color: #e74c3c;
+  margin-right: 2px;
+}
+
+.formInput {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f5f6fa;
+  font-size: 14px;
+  color: #555;
+  outline: none;
+}
+
+.formInput:focus {
+  background: #eef0f5;
+}
+
+.formSelect {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f5f6fa;
+  font-size: 14px;
+  color: #555;
+  outline: none;
+  cursor: pointer;
+}
+
+.saveProductBtn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  background: #e8652e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.saveProductBtn:hover {
+  background: #d4551f;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import heroArt from "../assets/images/image.png";
 import logo from "../assets/images/RiggleLogo.png";
 import helpIcon from "../assets/images/streamline_help-chat-2-solid.png";
@@ -8,10 +9,10 @@ import bugIcon from "../assets/images/Vector (3).png";
 import sendIcon from "../assets/images/send-icon.svg";
 import attachmentIcon from "../assets/images/attachment-icon.svg";
 import LoginScreen from "./LoginScreen";
-import BrandSetup from "./BrandSetup";
-import SupplyChainStep from "./SupplyChainStep";
-import DesignationStep from "./DesignationStep";
-import FinalizeOnboardingStep from "./FinalizeOnboardingStep";
+import BrandSetup from "../onboarding/BrandSetup";
+import SupplyChainStep from "../onboarding/SupplyChainStep";
+import DesignationStep from "../onboarding/DesignationStep";
+import FinalizeOnboardingStep from "../onboarding/FinalizeOnboardingStep";
 import styles from "./SignupFlow.module.css";
 
 const CHAT_DURATION_SECONDS = 180;
@@ -31,12 +32,10 @@ const SUPPORT_RESPONSES = [
 ];
 
 function SignupFlow() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
-  const [isBrandSetupOpen, setIsBrandSetupOpen] = useState(false);
-  const [isSupplyChainOpen, setIsSupplyChainOpen] = useState(false);
-  const [isDesignationOpen, setIsDesignationOpen] = useState(false);
-  const [isFinalizeOpen, setIsFinalizeOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   const [isHelpMenuOpen, setIsHelpMenuOpen] = useState(false);
   const [isChatViewOpen, setIsChatViewOpen] = useState(false);
   const [onboardingForm, setOnboardingForm] = useState({
@@ -68,7 +67,7 @@ function SignupFlow() {
       return;
     }
 
-    setIsBrandSetupOpen(true);
+    navigate("/brand-setup");
   };
 
   const handleBrandSetupNext = (brandData) => {
@@ -76,39 +75,27 @@ function SignupFlow() {
       ...onboardingForm,
       ...brandData,
     });
-    setIsBrandSetupOpen(false);
-    setIsSupplyChainOpen(true);
+    navigate("/supply-chain");
   };
 
   const handleSupplyChainNext = (supplyData) => {
     console.log("Supply chain setup completed", supplyData);
-    setIsSupplyChainOpen(false);
-    setIsDesignationOpen(true);
+    navigate("/designation");
   };
 
   const handleDesignationNext = () => {
-    setIsDesignationOpen(false);
-    setIsFinalizeOpen(true);
+    navigate("/finalize");
   };
 
   const handleRequestDemo = () => {
-    setIsFinalizeOpen(false);
-    setIsDesignationOpen(false);
-    setIsSupplyChainOpen(false);
-    setIsBrandSetupOpen(false);
-    setIsOnboardingOpen(false);
-    setIsLoginOpen(true);
+    navigate("/login");
   };
 
   const handleLoginSuccess = () => {
-    setIsLoginOpen(false);
-    setIsOnboardingOpen(true);
+    navigate("/onboarding");
   };
 
-  const handleFinalizeBack = () => {
-    setIsFinalizeOpen(false);
-    setIsDesignationOpen(true);
-  };
+
 
   const handleHelpToggle = () => {
     setIsHelpMenuOpen((prev) => {
@@ -219,39 +206,41 @@ function SignupFlow() {
   const minutes = String(Math.floor(timeLeft / 60)).padStart(1, "0");
   const seconds = String(timeLeft % 60).padStart(2, "0");
 
-  if (isLoginOpen) {
+  if (currentPath === "/login") {
     return <LoginScreen onLoginSuccess={handleLoginSuccess} />;
   }
 
-  if (isFinalizeOpen) {
-    return <FinalizeOnboardingStep onBack={handleFinalizeBack} />;
-  }
-
-  if (isDesignationOpen) {
+  if (currentPath === "/finalize") {
     return (
-      <DesignationStep
-        onNext={handleDesignationNext}
-        onBack={() => {
-          setIsDesignationOpen(false);
-          setIsSupplyChainOpen(true);
-        }}
+      <FinalizeOnboardingStep
+        onBack={() => navigate("/designation")}
+        onArrowClick={() => navigate("/dashboard")}
       />
     );
   }
 
-  if (isSupplyChainOpen) {
+  if (currentPath === "/designation") {
+    return (
+      <DesignationStep
+        onNext={handleDesignationNext}
+        onBack={() => navigate("/supply-chain")}
+      />
+    );
+  }
+
+  if (currentPath === "/supply-chain") {
     return (
       <SupplyChainStep
-        onBack={() => setIsSupplyChainOpen(false)}
+        onBack={() => navigate("/brand-setup")}
         onNext={handleSupplyChainNext}
       />
     );
   }
 
-  if (isBrandSetupOpen) {
+  if (currentPath === "/brand-setup") {
     return (
       <BrandSetup
-        onBack={() => setIsBrandSetupOpen(false)}
+        onBack={() => navigate("/onboarding")}
         onNext={handleBrandSetupNext}
       />
     );
@@ -259,7 +248,7 @@ function SignupFlow() {
 
   return (
     <div className={styles.shell}>
-      {!isOnboardingOpen ? (
+      {currentPath !== "/onboarding" ? (
         <>
           <header className={styles.header}>
             <img src={logo} alt="Riggle" className={styles.brandLogo} />
