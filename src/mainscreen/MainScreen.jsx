@@ -99,13 +99,18 @@ function MainScreen() {
                 ← Back
               </button>
               <div className={styles.addBrandCard}>
-                <h2 className={styles.addBrandTitle}>Let's Set Up Your Brand</h2>
-                <p className={styles.addBrandSubtitle}>Share your brand details with us</p>
+                <h2 className={styles.addBrandTitle}>
+                  Let's Set Up Your Brand
+                </h2>
+                <p className={styles.addBrandSubtitle}>
+                  Share your brand details with us
+                </p>
 
                 <div className={styles.addBrandForm}>
                   <div className={styles.addBrandField}>
                     <label className={styles.addBrandLabel}>
-                      What is your brand name? <span className={styles.addBrandRequired}>*</span>
+                      What is your brand name?{" "}
+                      <span className={styles.addBrandRequired}>*</span>
                     </label>
                     <input
                       type="text"
@@ -139,7 +144,9 @@ function MainScreen() {
                         type="file"
                         accept="image/*"
                         style={{ display: "none" }}
-                        onChange={(e) => setBrandLogo(e.target.files?.[0] || null)}
+                        onChange={(e) =>
+                          setBrandLogo(e.target.files?.[0] || null)
+                        }
                       />
                     </div>
                     <p className={styles.addBrandFileName}>
@@ -149,13 +156,16 @@ function MainScreen() {
 
                   <div className={styles.addBrandField}>
                     <label className={styles.addBrandLabel}>
-                      Which ones do you operate in? <span className={styles.addBrandRequired}>*</span>
+                      Which ones do you operate in?{" "}
+                      <span className={styles.addBrandRequired}>*</span>
                     </label>
                     <select
                       value={brandCity}
                       onChange={(e) => setBrandCity(e.target.value)}
                       className={styles.addBrandSelect}>
-                      <option value="" disabled>Select city</option>
+                      <option value="" disabled>
+                        Select city
+                      </option>
                       <option value="Delhi">Delhi</option>
                       <option value="Mumbai">Mumbai</option>
                       <option value="Bengaluru">Bengaluru</option>
@@ -172,8 +182,13 @@ function MainScreen() {
               </div>
 
               <div className={styles.addBrandHelp}>
-                <span className={styles.addBrandHelpLabel}>Managing multiple brands?</span>
-                <span className={styles.addBrandHelpDesc}>Don't worry, we can add you with one and we can handle add other.</span>
+                <span className={styles.addBrandHelpLabel}>
+                  Managing multiple brands?
+                </span>
+                <span className={styles.addBrandHelpDesc}>
+                  Don't worry, we can add you with one and we can handle add
+                  other.
+                </span>
               </div>
             </div>
           ) : (
