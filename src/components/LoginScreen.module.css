@@ -32,14 +32,18 @@
 /* ── Card ── */
 .card {
   width: 600px;
-  background: #ffffff;
-  border: 1px solid #fc8c4d99;
   border-radius: 16px;
-  padding: 48px 44px 44px;
-  box-shadow: 0 14px 38px rgba(39, 39, 39, 0.08);
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+
+  transition: box-shadow 0.2s;
 }
 
 .greeting {
@@ -54,8 +58,8 @@
 
 .subtitle {
   margin: 0 0 32px;
-  font-family: "Poppins", var(--font-family-primary);
-  font-weight: 600;
+  /* font-family: "Poppins", var(--font-family-primary); */
+  font-weight: 500;
   font-size: 20px;
   line-height: 134%;
   letter-spacing: 0;
@@ -107,12 +111,12 @@
   outline: none;
   padding: 0 16px;
   font-family: "Poppins", var(--font-family-primary);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 134%;
   letter-spacing: 0;
-  text-align: center;
-  color: #26323880;
+  /* text-align: center; */
+  color: #000;
   background: transparent;
   height: 100%;
 }
@@ -128,8 +132,8 @@
   width: 128px;
   height: 40px;
   border: 1px solid #ffffff;
-  border-radius: 2px;
-  background: var(--color-brand-accent);
+  border-radius: 5px;
+  background: #fc8c4d;
   color: #ffffff;
   font-family: "Poppins", var(--font-family-primary);
   font-weight: 600;
@@ -137,8 +141,8 @@
   letter-spacing: 0.01em;
   cursor: pointer;
   align-self: flex-start;
-  box-shadow: 2px 2px 4px 0 rgba(166, 166, 166, 0.25);
-  transition: opacity 0.15s;
+  /* box-shadow: 2px 2px 4px 0 rgba(166, 166, 166, 0.25); */
+  /* transition: opacity 0.15s; */
 }
 
 .otpButton:hover {
@@ -455,7 +459,7 @@
   width: 128px;
   height: 40px;
   border: 1px solid #ffffff;
-  border-radius: 2px;
+  border-radius: 5px;
   background: var(--color-brand-accent);
   color: #ffffff;
   font-family: "Poppins", var(--font-family-primary);
@@ -532,26 +536,26 @@
   line-height: 134%;
   letter-spacing: 0;
   text-align: center;
-  color: #44505b;
+  color: rgba(38, 50, 56, 0.8);
 }
 
 .successSubtitle {
   margin: 14px 0 24px;
-  font-family: "Poppins", var(--font-family-primary);
-  font-size: 24px;
+  /* font-family: "Poppins", var(--font-family-primary); */
   font-weight: 500;
+  font-size: 24px;
   line-height: 134%;
   letter-spacing: 0;
   text-align: center;
   white-space: nowrap;
-  color: #44505b;
+  color: rgba(38, 50, 56, 0.8);
 }
 
 .successProceedButton {
   width: 168px;
   height: 40px;
   border: 1px solid #ffffff;
-  border-radius: 2px;
+  border-radius: 5px;
   background: var(--color-brand-accent);
   color: #ffffff;
   font-family: "Poppins", var(--font-family-primary);

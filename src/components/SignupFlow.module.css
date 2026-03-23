@@ -102,7 +102,8 @@
 }
 
 .heroImage {
-  width: min(480px, 100%);
+  width: (438px, 100%);
+  height: 432px;
   aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
@@ -127,9 +128,15 @@
 
 .onboardingCard {
   width: min(760px, 100%);
-  border: 1px solid rgba(245, 126, 59, 0.35);
   border-radius: 10px;
   padding: 28px 46px 30px;
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+
+  transition: box-shadow 0.2s;
 }
 
 .formTitle {

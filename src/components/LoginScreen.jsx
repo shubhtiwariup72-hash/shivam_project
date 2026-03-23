@@ -13,15 +13,15 @@ const CHAT_RESET_DELAY_MS = 3500;
 const INITIAL_CHAT_MESSAGES = [
   { id: 1, role: "support", text: "Hello, describe your issue." },
 ];
-const SUPPORT_RESPONSES = [
-  "Thank you for reaching out! Our team will assist you shortly.",
-  "Got it! We're looking into your request. Thanks for your patience!",
-  "Thanks for getting in touch. Our support team will be with you soon.",
-  "We appreciate you contacting us. We'll get back to you right away!",
-  "Your message has been received. Our team is here to help!",
-  "Thanks for reaching out! We're on it.",
-  "Message received! We'll respond as soon as possible.",
-  "Thanks for your feedback! We'll look into this for you.",
+const AI_RESPONSES = [
+  "I'm an AI assistant. How can I help you today?",
+  "Let me think... Here's what I found: [This is a simulated AI response]",
+  "Great question! Based on your input, here's a suggestion: [AI suggestion here]",
+  "I'm here to assist you. Please provide more details.",
+  "Interesting! Let me process that for you... [AI is typing]",
+  "Here's an idea: [AI-generated advice]",
+  "Thanks for your message! Here's what I recommend: [AI recommendation]",
+  "I'm always learning. Can you clarify your question?",
 ];
 
 /**
@@ -137,14 +137,19 @@ function LoginScreen({ onLoginSuccess, greeting = "there" }) {
       setChatSessionStatus("active");
       setTimeLeft(CHAT_DURATION_SECONDS);
     }
-    const resp =
-      SUPPORT_RESPONSES[Math.floor(Math.random() * SUPPORT_RESPONSES.length)];
     setChatMessages((prev) => [
       ...prev,
       { id: Date.now(), role: "user", text: trimmed },
-      { id: Date.now() + 1, role: "support", text: resp },
     ]);
     setChatInput("");
+    // Simulate AI response after a short delay
+    setTimeout(() => {
+      const aiResp = AI_RESPONSES[Math.floor(Math.random() * AI_RESPONSES.length)];
+      setChatMessages((prev) => [
+        ...prev,
+        { id: Date.now() + 1, role: "support", text: aiResp },
+      ]);
+    }, 900);
   };
 
   const handleSendOtp = () => {
@@ -244,6 +249,7 @@ function LoginScreen({ onLoginSuccess, greeting = "there" }) {
                     if (e.key === "Enter" && !otpSent) handleSendOtp();
                   }}
                   autoFocus={!otpSent}
+
                 />
               </div>
 
@@ -410,7 +416,7 @@ function LoginScreen({ onLoginSuccess, greeting = "there" }) {
                         alt=""
                         className={styles.helpItemIcon}
                       />{" "}
-                      Chat with us
+                      Ask AI
                     </button>
                     <button className={styles.helpItem} type="button">
                       <img

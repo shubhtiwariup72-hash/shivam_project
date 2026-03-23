@@ -285,7 +285,7 @@ function SignupFlow() {
                 className={styles.cta}
                 type="button"
                 onClick={handleRequestDemo}>
-                Request a Demo
+                Get Started
               </button>
               <p className={styles.gst}>(Inclusive of GST)</p>
             </section>
